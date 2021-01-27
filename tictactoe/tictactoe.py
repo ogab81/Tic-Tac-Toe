@@ -9,7 +9,8 @@ draw = False
 width = 400
 height = 400
 white = (255, 255, 255)
-line_color = (10, 10, 10)
+vertical_line_color = (0, 230, 0)
+horizontal_line_color = (0, 0, 230)
 
 # 3x3 Board with 9 None values at first
 TTT = [[None] * 3, [None] * 3, [None] * 3]
@@ -38,15 +39,15 @@ def game_opening():
     screen.blit(opening, (0, 0))
     pg.display.update()
     time.sleep(1)
-    screen.fill(white)
+    screen.fill('white')
 
     # drawing vertical lines
-    pg.draw.line(screen, line_color, (width / 3, 0), (width / 3, height), 7)
-    pg.draw.line(screen, line_color, (width / 3 * 2, 0), (width / 3 * 2, height), 7)
+    pg.draw.line(screen, vertical_line_color, (width / 3, 0), (width / 3, height), 7)
+    pg.draw.line(screen, vertical_line_color, (width / 3 * 2, 0), (width / 3 * 2, height), 7)
 
     # drawing horizontal lines
-    pg.draw.line(screen, line_color, (0, height / 3), (width, height / 3), 7)
-    pg.draw.line(screen, line_color, (0, height / 3 * 2), (width, height / 3 * 2), 7)
+    pg.draw.line(screen, horizontal_line_color, (0, height / 3), (width, height / 3), 7)
+    pg.draw.line(screen, horizontal_line_color, (0, height / 3 * 2), (width, height / 3 * 2), 7)
     draw_status()
 
 
